@@ -143,7 +143,6 @@ class PickTime extends Component {
               </Input>
               </FormGroup>
         </div>
-        <Button onClick={this.consoleLogs}>check the state</Button>
         <Link to="/Success">
           <Button color="info">All Done!</Button>
         </Link>
