@@ -4,17 +4,22 @@ import './css/PickTime.css';
 import { Button, Form, FormGroup, Label, Input, FormText, Col, Row } from 'reactstrap';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-
+const data = {"name": "Alex"};
 class PickTime extends Component {
 
   constructor(){
     super()
     this.state = {
+      userData: {
+                  "major": null,
+                  "hobby": null,
+                  "worktime": null,
+                  "schoolyear": null,
+                },
       major: 'Major not Yet Determined',
       hobby: 'Hobby not Yet Determined',
       worktime: 'Worktime not Yet Determined',
-      schoolYear: 'school Yearh not yet determined',
-      currentyear: 'Current Year not Yet Determined',
+      schoolYear: 'school Year not yet determined',
       freeTime: {},
     };
     this.consoleLogs = this.consoleLogs.bind(this);
@@ -50,7 +55,7 @@ class PickTime extends Component {
     };
 
     componentDidMount = () => {
-      axios.post('./studentInformation').then(response => {
+      axios.post('./profile', { data }).then(response => {
         console.log(response);
       })
     };
@@ -60,38 +65,9 @@ class PickTime extends Component {
       <div className="pick-time">
       <div className="welcome-text-2">
         <h3>
-        <span className="grey-text">Let's start out with</span> picking your available times, and some
+        <span className="grey-text">Let's start out with</span>  some
         information on your interests.
         </h3>
-      </div>
-      <div className="pick-3">
-      <AvailableTimes
-            weekStartsOn="monday"
-            calendars={[
-              {
-                id: 'private',
-                title: 'My private cal',
-                foregroundColor: '#666',
-                backgroundColor: '#f3f3f3',
-              },
-            ]}
-            onChange={(selections) => {
-              selections.forEach(({ start, end }) => {
-                this.setState(prevState => ({
-                  freeTime:{
-                    ...prevState.freeTime,
-                    'start': start,
-                    'end': end,
-                  }
-                }));
-                console.log('Here is the freetime '+ JSON.stringify(this.state.freeTime));
-              })
-            }}
-            height={400}
-            recurring={false}
-            availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']}
-            availableHourRange={{ start: 6, end: 22 }}
-            />
       </div>
       <div className="form-submission">
         <Form>
