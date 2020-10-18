@@ -1,0 +1,39 @@
+.welcome-text-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+  text-align: center;
+}
+
+.pick-time{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 190px;
+  padding-bottom: 50px;
+  align-items: center;
+}
+
+.pick-3{
+  width: 80%;
+}
+.pick-hours{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.title{
+  padding-right: 90px;
+}
+
+.formGroup2{
+  width: 25%;
+}
+
+.form-submission{
+}

@@ -1,0 +1,29 @@
+.welcome-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+  text-align: center;
+}
+
+.grey-text {
+  color: grey;
+}
+
+.password {
+  margin-top: 20px;
+}
+
+.email {
+  margin-top: 20px;
+  width: 80%;
+}
+
+.formGroup{
+  width: 70%;
+}
+
+.button{
+  width: 100%;
+}
